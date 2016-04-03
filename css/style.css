@@ -1,0 +1,69 @@
+body {
+	background-image: url("/gee-mail/backgroundopacity1.jpg");
+	background-size: 150%; 
+	background-position: center;
+	font-family: Avenir; 
+}
+
+div.body {
+	display: none;
+
+}
+
+div.body.show {
+	display: inline-block;
+/*	margin-left: 150px;*/
+}
+
+h1 {
+	text-align: left;
+/*	border: 0.5px solid black;
+	background-color: black;
+	opacity: 0.4;*/
+}
+
+div#sidebar{
+	width: 200px;
+	height: 500px;
+/*	background-color: silver;*/
+	border: 1px solid black;
+	float: left;
+	text-align: left;
+/*	background-color: silver;
+	opacity: 0.5;*/
+}
+
+.sides {
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+#main {
+	margin-left: 250px;
+	color: black;
+}
+
+.sender, .subject, .date {
+	display: inline-block;
+	margin-left: 25px;
+
+}
+
+
+.emails {
+	margin-bottom: 50px;
+/*	background-color: white;*/
+	margin-right: 100px;
+	border-bottom: 1px solid black;
+}
+
+
+.body {
+	margin-left: 100px;
+
+
+	}
+
+
+
