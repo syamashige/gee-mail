@@ -6,13 +6,155 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+      var inboxTotal = geemails.length;
+
+       var inboxElement = document.createElement('div');
+        inboxElement.id = 'inbox';
+        inboxElement.className = 'sides';
+        inboxElement.innerHTML = 'Inbox ( ' + geemails.length + ' )';
+        document.getElementById('sidebar').appendChild(inboxElement);
+
+      var sidebarElement1 = document.createElement('div');
+        sidebarElement1.id = 'important';
+        sidebarElement1.className = 'sides';
+        sidebarElement1.innerHTML = 'Important';
+        document.getElementById('sidebar').appendChild(sidebarElement1);
+
+      var sidebarElement2 = document.createElement('div');
+        sidebarElement2.id = 'sentmail';
+        sidebarElement2.className = 'sides';
+        sidebarElement2.innerHTML = 'Sent Mail';
+        document.getElementById('sidebar').appendChild(sidebarElement2);
+
+      var sidebarElement3 = document.createElement('div');
+        sidebarElement3.id = 'drafts';
+        sidebarElement3.className = 'sides';
+        sidebarElement3.innerHTML = 'Drafts';
+        document.getElementById('sidebar').appendChild(sidebarElement3);
+
+        //Put everything within a function: 
+       function generateEmail (messages) {
+       	for (var i = 0; i<messages.length; i++) {
+       		var subject = messages[i].subject; 
+       		var sender = messages[i]. sender; 
+       		var date = messages[i].date; 
+       		var body = messages[i].body;
+
+          console.log(messages.length);
+
+       		var emailContainer = document.createElement('div');
+       		emailContainer.className = 'emails';
+       		document.getElementById('main').appendChild(emailContainer);
+
+       		var senderElement = document.createElement ('div');
+       		senderElement.className = 'sender';
+       		senderElement.innerHTML = sender; 
+       		emailContainer.appendChild(senderElement);
+
+       		var subjectElement = document.createElement ('div');
+       		subjectElement.className = 'subject';
+       		subjectElement.innerHTML = subject; 
+       		emailContainer.appendChild(subjectElement);
+
+       		var dateElement = document.createElement('div');
+       		dateElement.className = 'date';
+       		dateElement.innerHTML = date; 
+       		emailContainer.appendChild(dateElement);
+
+       		var bodyElement = document.createElement ('div');
+       		bodyElement.className = 'body';
+       		bodyElement.innerHTML = body; 
+       		emailContainer.appendChild(bodyElement);
+
+       		var emailListener = document.getElementsByClassName('emails');
+       		for (var j = 0; j < emailListener.length; j++) {
+       			emailListener[j].addEventListener ('click', showMessages);
+			}
+    function showMessages (event) {
+      var showBody = this.querySelectorAll('.body')[0];
+        if(showBody.classList.contains('show')===false) {
+            showBody.classList.add('show'); }
+        else { 
+            showBody.classList.remove('show');
+          }
+        }  
+      }
+    }
+
+    generateEmail(geemails);
+
+
+      setInterval( function (){
+        var newMessages = getNewMessage();
+        geemails.push(newMessages);
+        console.log(newMessages);
+
+        var emailContainer = document.createElement('div');
+          emailContainer.className = 'emails';
+          document.getElementById('main').appendChild(emailContainer);
+
+          var senderElement = document.createElement ('div');
+          senderElement.className = 'sender';
+          senderElement.innerHTML = newMessages.sender; 
+          emailContainer.appendChild(senderElement);
+
+          var subjectElement = document.createElement ('div');
+          subjectElement.className = 'subject';
+          subjectElement.innerHTML = newMessages.subject; 
+          emailContainer.appendChild(subjectElement);
+
+          var dateElement = document.createElement('div');
+          dateElement.className = 'date';
+          dateElement.innerHTML = newMessages.date; 
+          emailContainer.appendChild(dateElement);
+
+          var bodyElement = document.createElement ('div');
+          bodyElement.className = 'body';
+          bodyElement.innerHTML = newMessages.body; 
+          emailContainer.appendChild(bodyElement);
+
+          var emailListener = document.getElementsByClassName('emails');
+          console.log(emailListener);
+          for (var j = 0; j < emailListener.length; j++) {
+            emailListener[j].addEventListener ('click', showMessages);
+      }
+            function showMessages (event) {
+              var showBody = this.querySelectorAll('.body')[0];
+                if(showBody.classList.contains('show')===false) {
+                showBody.classList.add('show'); }
+                else { 
+                showBody.classList.remove('show');
+                }
+              }
+
+        inboxTotal += 1;
+        inbox.innerHTML = 'Inbox ( ' + inboxTotal + ' )';
+
+      }, 6000); 
+
+
+      // var messageInterval = window.setInterval(newMessages, 3000);
+
+      // function newMessages (messages) {
+      //   var newMessage = getNewMessage();
+      //   generateEmail(newMessage);
+      //   console.log(newMessage);
+      //   inboxTotal +=1;
+      //   inboxElement.innerHTML = 'Inbox: ' + inboxTotal;
+      // }
+
+
       };
+
     </script>
 	</head>
 	<body>
+		<h1 id="title"> Gee-Mail </h1>
+    <div class="sides" id="sidebar">
+    </div>
 		<div class="container" id="main">
-			Build Me!
+			
 		</div>
-	</body>
+</body>
 </html>
