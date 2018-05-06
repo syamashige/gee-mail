@@ -9,28 +9,37 @@
 
       var inboxTotal = geemails.length;
 
-       var inboxElement = document.createElement('div');
-        inboxElement.id = 'inbox';
-        inboxElement.className = 'sides';
-        inboxElement.innerHTML = 'Inbox ( ' + geemails.length + ' )';
+      function myHelper(elem, idLabel, classLabel, content) {
+        var helpMe = document.createElement(elem);
+        helpMe.id = idLabel;
+        helpMe.className = classLabel;
+        helpMe.innerHTML = content;
+
+        return helpMe;
+      }
+
+       var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + geemails.length + ' )');
+        // inboxElement.id = 'inbox';
+        // inboxElement.className = 'sides';
+        // inboxElement.innerHTML = 'Inbox ( ' + geemails.length + ' )';
         document.getElementById('sidebar').appendChild(inboxElement);
 
-      var sidebarElement1 = document.createElement('div');
-        sidebarElement1.id = 'important';
-        sidebarElement1.className = 'sides';
-        sidebarElement1.innerHTML = 'Important';
+      var sidebarElement1 = myHelper('div', 'important', 'sides', 'Important');
+        // sidebarElement1.id = 'important';
+        // sidebarElement1.className = 'sides';
+        // sidebarElement1.innerHTML = 'Important';
         document.getElementById('sidebar').appendChild(sidebarElement1);
 
-      var sidebarElement2 = document.createElement('div');
-        sidebarElement2.id = 'sentmail';
-        sidebarElement2.className = 'sides';
-        sidebarElement2.innerHTML = 'Sent Mail';
+      var sidebarElement2 = myHelper('div', 'sentmail', 'sides', 'Sent Mail');
+        // sidebarElement2.id = 'sentmail';
+        // sidebarElement2.className = 'sides';
+        // sidebarElement2.innerHTML = 'Sent Mail';
         document.getElementById('sidebar').appendChild(sidebarElement2);
 
-      var sidebarElement3 = document.createElement('div');
-        sidebarElement3.id = 'drafts';
-        sidebarElement3.className = 'sides';
-        sidebarElement3.innerHTML = 'Drafts';
+      var sidebarElement3 = myHelper('div', 'drafts', 'sides', 'Drafts');
+        // sidebarElement3.id = 'drafts';
+        // sidebarElement3.className = 'sides';
+        // sidebarElement3.innerHTML = 'Drafts';
         document.getElementById('sidebar').appendChild(sidebarElement3);
 
         //Put everything within a function: 
@@ -47,24 +56,25 @@
        		emailContainer.className = 'emails';
        		document.getElementById('main').appendChild(emailContainer);
 
-       		var senderElement = document.createElement ('div');
-       		senderElement.className = 'sender';
-       		senderElement.innerHTML = sender; 
+          var senderElement = myHelper('div', null, 'sender', sender); 
+          // var senderElement = document.createElement ('div');
+       		// senderElement.className = 'sender';
+       		// senderElement.innerHTML = sender; 
        		emailContainer.appendChild(senderElement);
 
-       		var subjectElement = document.createElement ('div');
-       		subjectElement.className = 'subject';
-       		subjectElement.innerHTML = subject; 
+       		var subjectElement = myHelper('div', null, 'subject', subject);
+       		// subjectElement.className = 'subject';
+       		// subjectElement.innerHTML = subject; 
        		emailContainer.appendChild(subjectElement);
 
-       		var dateElement = document.createElement('div');
-       		dateElement.className = 'date';
-       		dateElement.innerHTML = date; 
+       		var dateElement = myHelper('div', null, 'date', date);
+       		// dateElement.className = 'date';
+       		// dateElement.innerHTML = date; 
        		emailContainer.appendChild(dateElement);
 
-       		var bodyElement = document.createElement ('div');
-       		bodyElement.className = 'body';
-       		bodyElement.innerHTML = body; 
+       		var bodyElement = myHelper('div', null, 'body', body);
+       		// bodyElement.className = 'body';
+       		// bodyElement.innerHTML = body; 
        		emailContainer.appendChild(bodyElement);
 
        		var emailListener = document.getElementsByClassName('emails');
@@ -94,24 +104,24 @@
           emailContainer.className = 'emails';
           document.getElementById('main').appendChild(emailContainer);
 
-          var senderElement = document.createElement ('div');
-          senderElement.className = 'sender';
-          senderElement.innerHTML = newMessages.sender; 
+          var senderElement = myHelper('div', null, 'sender', newMessages.sender);
+          // senderElement.className = 'sender';
+          // senderElement.innerHTML = newMessages.sender; 
           emailContainer.appendChild(senderElement);
 
-          var subjectElement = document.createElement ('div');
-          subjectElement.className = 'subject';
-          subjectElement.innerHTML = newMessages.subject; 
+          var subjectElement = myHelper('div', null, 'subject', newMessages.subject);
+          // subjectElement.className = 'subject';
+          // subjectElement.innerHTML = newMessages.subject; 
           emailContainer.appendChild(subjectElement);
 
-          var dateElement = document.createElement('div');
-          dateElement.className = 'date';
-          dateElement.innerHTML = newMessages.date; 
+          var dateElement = myHelper('div', null, 'date', newMessages.date);
+          // dateElement.className = 'date';
+          // dateElement.innerHTML = newMessages.date; 
           emailContainer.appendChild(dateElement);
 
-          var bodyElement = document.createElement ('div');
-          bodyElement.className = 'body';
-          bodyElement.innerHTML = newMessages.body; 
+          var bodyElement = myHelper('div', null, 'body', newMessages.body);
+          // bodyElement.className = 'body';
+          // bodyElement.innerHTML = newMessages.body; 
           emailContainer.appendChild(bodyElement);
 
           var emailListener = document.getElementsByClassName('emails');
@@ -131,20 +141,8 @@
         inboxTotal += 1;
         inbox.innerHTML = 'Inbox ( ' + inboxTotal + ' )';
 
-      }, 6000); 
-
-
-      // var messageInterval = window.setInterval(newMessages, 3000);
-
-      // function newMessages (messages) {
-      //   var newMessage = getNewMessage();
-      //   generateEmail(newMessage);
-      //   console.log(newMessage);
-      //   inboxTotal +=1;
-      //   inboxElement.innerHTML = 'Inbox: ' + inboxTotal;
-      // }
-
-
+      }, 3000); 
+      
       };
 
     </script>

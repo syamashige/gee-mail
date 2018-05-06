@@ -1,7 +1,8 @@
 body {
 	background-image: url("/backgroundopacity1.jpg");
+	background-color: #404040;
 	background-size: 150%; 
-	background-position: center;
+	background-position: fixed;
 	font-family: Avenir; 
 }
 
