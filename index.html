@@ -19,27 +19,15 @@
       }
 
        var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + geemails.length + ' )');
-        // inboxElement.id = 'inbox';
-        // inboxElement.className = 'sides';
-        // inboxElement.innerHTML = 'Inbox ( ' + geemails.length + ' )';
         document.getElementById('sidebar').appendChild(inboxElement);
 
       var sidebarElement1 = myHelper('div', 'important', 'sides', 'Important');
-        // sidebarElement1.id = 'important';
-        // sidebarElement1.className = 'sides';
-        // sidebarElement1.innerHTML = 'Important';
         document.getElementById('sidebar').appendChild(sidebarElement1);
 
       var sidebarElement2 = myHelper('div', 'sentmail', 'sides', 'Sent Mail');
-        // sidebarElement2.id = 'sentmail';
-        // sidebarElement2.className = 'sides';
-        // sidebarElement2.innerHTML = 'Sent Mail';
         document.getElementById('sidebar').appendChild(sidebarElement2);
 
       var sidebarElement3 = myHelper('div', 'drafts', 'sides', 'Drafts');
-        // sidebarElement3.id = 'drafts';
-        // sidebarElement3.className = 'sides';
-        // sidebarElement3.innerHTML = 'Drafts';
         document.getElementById('sidebar').appendChild(sidebarElement3);
 
         //Put everything within a function: 
@@ -61,30 +49,21 @@
           checkBoxElem.type = 'checkbox';
           emailContainer.appendChild(checkBoxElem);
 
-          var starElem = document.createElement('img');
-          starElem.className = 'star';
-          starElem.src = "/assets/star.png";
-          emailContainer.appendChild(starElem);
+          // var starElem = document.createElement('img');
+          // starElem.className = 'star';
+          // starElem.src = "/assets/star.png";
+          // emailContainer.appendChild(starElem);
 
           var senderElement = myHelper('div', null, 'sender', sender); 
-          // var senderElement = document.createElement ('div');
-       		// senderElement.className = 'sender';
-       		// senderElement.innerHTML = sender; 
        		emailContainer.appendChild(senderElement);
 
        		var subjectElement = myHelper('div', null, 'subject', subject);
-       		// subjectElement.className = 'subject';
-       		// subjectElement.innerHTML = subject; 
        		emailContainer.appendChild(subjectElement);
 
        		var dateElement = myHelper('div', null, 'date', date);
-       		// dateElement.className = 'date';
-       		// dateElement.innerHTML = date; 
        		emailContainer.appendChild(dateElement);
 
        		var bodyElement = myHelper('div', null, 'body', body);
-       		// bodyElement.className = 'body';
-       		// bodyElement.innerHTML = body; 
        		emailContainer.appendChild(bodyElement);
 
        		var emailListener = document.getElementsByClassName('emails');
@@ -115,23 +94,15 @@
           document.getElementById('main').appendChild(emailContainer);
 
           var senderElement = myHelper('div', null, 'sender', newMessages.sender);
-          // senderElement.className = 'sender';
-          // senderElement.innerHTML = newMessages.sender; 
           emailContainer.appendChild(senderElement);
 
           var subjectElement = myHelper('div', null, 'subject', newMessages.subject);
-          // subjectElement.className = 'subject';
-          // subjectElement.innerHTML = newMessages.subject; 
           emailContainer.appendChild(subjectElement);
 
           var dateElement = myHelper('div', null, 'date', newMessages.date);
-          // dateElement.className = 'date';
-          // dateElement.innerHTML = newMessages.date; 
           emailContainer.appendChild(dateElement);
 
           var bodyElement = myHelper('div', null, 'body', newMessages.body);
-          // bodyElement.className = 'body';
-          // bodyElement.innerHTML = newMessages.body; 
           emailContainer.appendChild(bodyElement);
 
           var emailListener = document.getElementsByClassName('emails');
@@ -160,7 +131,6 @@
 	<body>
     <div id="top">
         <div id="header">
-            <!-- <h1 id="title">Gee-Mail</h1> -->
             <img src="/assets/Geegle-Logo.png" alt="" id="logo">
             <input type="text"id="search">
             <button id="magnifier"><img src="/assets/search-icon.png" alt="" class="searchIcon"></button>
@@ -172,15 +142,6 @@
            <button id="more"><img src="/assets/more-button.png" alt="" class="moreIcon"></button>
           </div>
     </div>
-    <!-- <div id="header">
-      <!-- <h1 id="title">Gee-Mail</h1> -->
-      <!-- <img src="/assets/Geegle-Logo.png" alt="" id="logo"> -->
-    <!-- </div> -->
-    <!-- <div id="topbar"> -->
-      <!-- Geemail -->
-      <!-- <img src="/assets/geemail-logo.png" alt="" id="mailLogo"> -->
-    <!-- </div> --> 
-    <!-- <h1 id="title"> Gee-Mail </h1> -->
     <div class="sides" id="sidebar">
       <button id="compose">COMPOSE</button>
     </div>
