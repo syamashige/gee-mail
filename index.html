@@ -56,6 +56,16 @@
        		emailContainer.className = 'emails';
        		document.getElementById('main').appendChild(emailContainer);
 
+          var checkBoxElem = document.createElement('input');
+          checkBoxElem.className = 'checks';
+          checkBoxElem.type = 'checkbox';
+          emailContainer.appendChild(checkBoxElem);
+
+          var starElem = document.createElement('img');
+          starElem.className = 'star';
+          starElem.src = "/assets/star.png";
+          emailContainer.appendChild(starElem);
+
           var senderElement = myHelper('div', null, 'sender', sender); 
           // var senderElement = document.createElement ('div');
        		// senderElement.className = 'sender';
@@ -141,15 +151,38 @@
         inboxTotal += 1;
         inbox.innerHTML = 'Inbox ( ' + inboxTotal + ' )';
 
-      }, 3000); 
+      }, 6000); 
       
       };
 
     </script>
 	</head>
 	<body>
-		<h1 id="title"> Gee-Mail </h1>
+    <div id="top">
+        <div id="header">
+            <!-- <h1 id="title">Gee-Mail</h1> -->
+            <img src="/assets/Geegle-Logo.png" alt="" id="logo">
+            <input type="text"id="search">
+            <button id="magnifier"><img src="/assets/search-icon.png" alt="" class="searchIcon"></button>
+          </div>
+          <div id="topbar">
+            <img src="/assets/geemail-logo.png" alt="" id="mailLogo">
+           <button id="box"><input type="checkbox" class="checks"></button>
+           <button id="refresh"><img src="/assets/refresh.png" alt="" class="refreshIcon"></button>
+           <button id="more"><img src="/assets/more-button.png" alt="" class="moreIcon"></button>
+          </div>
+    </div>
+    <!-- <div id="header">
+      <!-- <h1 id="title">Gee-Mail</h1> -->
+      <!-- <img src="/assets/Geegle-Logo.png" alt="" id="logo"> -->
+    <!-- </div> -->
+    <!-- <div id="topbar"> -->
+      <!-- Geemail -->
+      <!-- <img src="/assets/geemail-logo.png" alt="" id="mailLogo"> -->
+    <!-- </div> --> 
+    <!-- <h1 id="title"> Gee-Mail </h1> -->
     <div class="sides" id="sidebar">
+      <button id="compose">COMPOSE</button>
     </div>
 		<div class="container" id="main">
 			
