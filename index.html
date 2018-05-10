@@ -38,12 +38,13 @@
        		var date = messages[i].date; 
        		var body = messages[i].body;
 
-          console.log(messages.length);
+          // console.log(messages.length);
 
        		var emailContainer = document.createElement('div');
        		emailContainer.className = 'emails';
        		document.getElementById('main').appendChild(emailContainer);
 
+          // still need to figure out how to get this to loop through with the new emails
           var checkBoxElem = document.createElement('input');
           checkBoxElem.className = 'checks';
           checkBoxElem.type = 'checkbox';
@@ -139,7 +140,7 @@
             <img src="/assets/geemail-logo.png" alt="" id="mailLogo">
            <button id="box"><input type="checkbox" class="checks"></button>
            <button id="refresh"><img src="/assets/refresh.png" alt="" class="refreshIcon"></button>
-           <button id="more"><img src="/assets/more-button.png" alt="" class="moreIcon"></button>
+           <button id="more"><b>More</b></button>
           </div>
     </div>
     <div class="sides" id="sidebar">

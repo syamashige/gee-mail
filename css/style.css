@@ -11,6 +11,11 @@ div.body.show {
 	display: inline-block;
 }
 
+/* Trying to keep the #header and #topbar stationary */
+/* #top {
+	position: fixed;
+} */
+/* Piles everything in the left corner */
 
 #header {
 	background-color: rgba(0,0,0,.08);
@@ -74,17 +79,14 @@ div.body.show {
 }
 
 #more {
-	padding: 10px 30px 8px 30px;
+	font-size: 14px;
+	color: #404040;
+	padding: 13px 30px 15px 30px;
 	background-color: rgba(0,0,0,.06);
 	margin-left: 310px;
 	margin-top: 4px;
 	position: absolute;
 	border-radius: 2px;
-}
-
-.moreIcon {
-	width: 30px; 
-	height: 25px;
 }
 
 #search{
