@@ -16,9 +16,9 @@
         helpMe.innerHTML = content;
 
         return helpMe;
-      }
+      };
 
-       var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + geemails.length + ' )');
+       var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + inboxTotal + ' )');
         document.getElementById('sidebar').appendChild(inboxElement);
 
       var sidebarElement1 = myHelper('div', 'important', 'sides', 'Important');
@@ -55,16 +55,15 @@
        		emailContainer.className = 'emails';
        		document.getElementById('main').appendChild(emailContainer);
 
-          // still need to figure out how to get this to loop through with the new emails
           var checkBoxElem = document.createElement('input');
           checkBoxElem.className = 'checks';
           checkBoxElem.type = 'checkbox';
           emailContainer.appendChild(checkBoxElem);
 
-          // var starElem = document.createElement('img');
-          // starElem.className = 'star';
-          // starElem.src = "/assets/star.png";
-          // emailContainer.appendChild(starElem);
+          var starElem = document.createElement('img');
+          starElem.className = 'star';
+          starElem.src = "/assets/star.png";
+          emailContainer.appendChild(starElem);
 
           var senderElement = myHelper('div', null, 'sender', sender); 
        		emailContainer.appendChild(senderElement);
@@ -78,13 +77,10 @@
        		var bodyElement = myHelper('div', null, 'body', body);
        		emailContainer.appendChild(bodyElement);
 
-       		// var emailListener = document.getElementsByClassName('emails');
-       		// for (var j = 0; j < emailListener.length; j++) {
-       		// 	emailListener[j].addEventListener ('click', showMessages);
-			}
-      var emailListener = document.getElementsByClassName('emails');
-      for (var j = 0; j < emailListener.length; j++) {
-      emailListener[j].addEventListener ('click', showMessages);
+       		var emailListener = document.getElementsByClassName('emails');
+       		for (var j = 0; j < emailListener.length; j++) {
+       			emailListener[j].addEventListener ('click', showMessages);
+			    }
 
     function showMessages (event) {
       var showBody = this.querySelectorAll('.body')[0];
@@ -93,9 +89,13 @@
         else { 
             showBody.classList.remove('show');
           }
-        }  
+        }; 
+
+      //   var emailListener = document.getElementsByClassName('emails');
+      //  		for (var i = 0; i < emailListener.length; i++) {
+      //  			emailListener[i].addEventListener ('click', showMessages);
       }
-    }
+    };
 
     generateEmail(geemails);
 
@@ -109,6 +109,16 @@
         var emailContainer = document.createElement('div');
           emailContainer.className = 'emails';
           document.getElementById('main').appendChild(emailContainer);
+
+          var checkBoxElem = document.createElement('input');
+          checkBoxElem.className = 'checks';
+          checkBoxElem.type = 'checkbox';
+          emailContainer.appendChild(checkBoxElem);
+
+          var starElem = document.createElement('img');
+          starElem.className = 'star';
+          starElem.src = "/assets/star.png";
+          emailContainer.appendChild(starElem);
 
           var senderElement = myHelper('div', null, 'sender', newMessages.sender);
           emailContainer.appendChild(senderElement);
@@ -124,8 +134,8 @@
 
           var emailListener = document.getElementsByClassName('emails');
           console.log(emailListener);
-          for (var j = 0; j < emailListener.length; j++) {
-            emailListener[j].addEventListener ('click', showMessages);
+          for (var i = 0; i < emailListener.length; i++) {
+            emailListener[i].addEventListener ('click', showMessages);
       }
             function showMessages (event) {
               var showBody = this.querySelectorAll('.body')[0];
@@ -139,7 +149,7 @@
         inboxTotal += 1;
         inbox.innerHTML = 'Inbox ( ' + inboxTotal + ' )';
 
-      }, 6000); 
+      }, 3000); 
       
       };
 
@@ -153,7 +163,7 @@
             <button id="magnifier"><img src="/assets/search-icon.png" alt="" class="searchIcon"></button>
           </div>
           <div id="topbar">
-            <img src="/assets/geemail-logo.png" alt="" id="mailLogo">
+           <img src="/assets/geemail-logo.png" alt="" id="mailLogo">
            <button id="box"><input type="checkbox" class="checks"></button>
            <button id="refresh"><img src="/assets/refresh.png" alt="" class="refreshIcon"></button>
            <button id="more"><b>More</b></button>
