@@ -39,6 +39,7 @@
           // var emailListener = document.getElementsByClassName('emails');
        		// for (var j = 0; j < emailListener.length; j++) {
        		// 	emailListener[j].addEventListener ('click', showMessages);
+          //  } 
 
 
         //Put everything within a function: 
@@ -77,10 +78,10 @@
        		var bodyElement = myHelper('div', null, 'body', body);
        		emailContainer.appendChild(bodyElement);
 
-       		var emailListener = document.getElementsByClassName('emails');
+       		var emailListener = document.getElementsByClassName('emails'); //original place works relatively better, but still not great
        		for (var j = 0; j < emailListener.length; j++) {
        			emailListener[j].addEventListener ('click', showMessages);
-			    }
+           }
 
     function showMessages (event) {
       var showBody = this.querySelectorAll('.body')[0];
@@ -89,17 +90,20 @@
         else { 
             showBody.classList.remove('show');
           }
-        }; 
+        }
 
-      //   var emailListener = document.getElementsByClassName('emails');
+      //   var emailListener = document.getElementsByClassName('emails'); //still works, but still has some issues
       //  		for (var i = 0; i < emailListener.length; i++) {
       //  			emailListener[i].addEventListener ('click', showMessages);
-      }
+       }
     };
 
     generateEmail(geemails);
 
-
+       		// var emailListener = document.getElementsByClassName('emails'); //for some reason mothing shows
+       		// for (var j = 0; j < emailListener.length; j++) {
+       		// 	emailListener[j].addEventListener ('click', showMessages);
+			    // };
 
       setInterval( function (){
         var newMessages = getNewMessage();
@@ -136,7 +140,8 @@
           console.log(emailListener);
           for (var i = 0; i < emailListener.length; i++) {
             emailListener[i].addEventListener ('click', showMessages);
-      }
+          };
+
             function showMessages (event) {
               var showBody = this.querySelectorAll('.body')[0];
                 if(showBody.classList.contains('show')===false) {
@@ -149,9 +154,15 @@
         inboxTotal += 1;
         inbox.innerHTML = 'Inbox ( ' + inboxTotal + ' )';
 
-      }, 3000); 
+      }, 6000); 
       
       };
+
+          // var emailListener = document.getElementsByClassName('emails');
+          // console.log(emailListener);
+          // for (var i = 0; i < emailListener.length; i++) {
+          //   emailListener[i].addEventListener ('click', showMessages);
+          // };
 
     </script>
 	</head>
