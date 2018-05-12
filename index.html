@@ -18,7 +18,7 @@
         return helpMe;
       };
 
-       var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + inboxTotal + ' )');
+      var inboxElement = myHelper('div', 'inbox', 'sides', 'Inbox ( ' + inboxTotal + ' )');
         document.getElementById('sidebar').appendChild(inboxElement);
 
       var sidebarElement1 = myHelper('div', 'important', 'sides', 'Important');
@@ -34,7 +34,7 @@
        function generateEmail (messages) {
 
         var emailListener = document.getElementsByClassName('emails');
-        
+
        		for (var j = 0; j < emailListener.length; j++) {
        			emailListener[j].addEventListener ('click', showMessages);
            }
@@ -60,6 +60,11 @@
           starElem.className = 'star';
           starElem.src = "/assets/star.png";
           emailContainer.appendChild(starElem);
+
+          var flagElem = document.createElement('img');
+          flagElem.className = 'flag';
+          flagElem.src = "/assets/flag-icon.png";
+          emailContainer.appendChild(flagElem);
 
           var senderElement = myHelper('div', null, 'sender', sender); 
        		emailContainer.appendChild(senderElement);
@@ -138,12 +143,6 @@
       }, 6000); 
       
       };
-
-          // var emailListener = document.getElementsByClassName('emails');
-          // console.log(emailListener);
-          // for (var i = 0; i < emailListener.length; i++) {
-          //   emailListener[i].addEventListener ('click', showMessages);
-          // };
 
     </script>
 	</head>
