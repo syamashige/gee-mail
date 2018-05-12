@@ -30,20 +30,15 @@
       var sidebarElement3 = myHelper('div', 'drafts', 'sides', 'Drafts');
         document.getElementById('sidebar').appendChild(sidebarElement3);
 
-       	// for (var i = 0; i<messages.length; i++) {
-       	// 	var subject = messages[i].subject; 
-       	// 	var sender = messages[i]. sender; 
-       	// 	var date = messages[i].date; 
-       	// 	var body = messages[i].body;
-
-          // var emailListener = document.getElementsByClassName('emails');
-       		// for (var j = 0; j < emailListener.length; j++) {
-       		// 	emailListener[j].addEventListener ('click', showMessages);
-          //  } 
-
-
         //Put everything within a function: 
        function generateEmail (messages) {
+
+        var emailListener = document.getElementsByClassName('emails');
+        
+       		for (var j = 0; j < emailListener.length; j++) {
+       			emailListener[j].addEventListener ('click', showMessages);
+           }
+
        	for (var i = 0; i<messages.length; i++) {
        		var subject = messages[i].subject; 
        		var sender = messages[i]. sender; 
@@ -77,12 +72,7 @@
 
        		var bodyElement = myHelper('div', null, 'body', body);
        		emailContainer.appendChild(bodyElement);
-
-       		var emailListener = document.getElementsByClassName('emails'); //original place works relatively better, but still not great
-       		for (var j = 0; j < emailListener.length; j++) {
-       			emailListener[j].addEventListener ('click', showMessages);
-           }
-
+           
     function showMessages (event) {
       var showBody = this.querySelectorAll('.body')[0];
         if(showBody.classList.contains('show')===false) {
@@ -91,19 +81,10 @@
             showBody.classList.remove('show');
           }
         }
-
-      //   var emailListener = document.getElementsByClassName('emails'); //still works, but still has some issues
-      //  		for (var i = 0; i < emailListener.length; i++) {
-      //  			emailListener[i].addEventListener ('click', showMessages);
        }
     };
 
     generateEmail(geemails);
-
-       		// var emailListener = document.getElementsByClassName('emails'); //for some reason mothing shows
-       		// for (var j = 0; j < emailListener.length; j++) {
-       		// 	emailListener[j].addEventListener ('click', showMessages);
-			    // };
 
       setInterval( function (){
         var newMessages = getNewMessage();
