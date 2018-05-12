@@ -34,7 +34,6 @@
        function generateEmail (messages) {
 
         var emailListener = document.getElementsByClassName('emails');
-
        		for (var j = 0; j < emailListener.length; j++) {
        			emailListener[j].addEventListener ('click', showMessages);
            }
@@ -109,6 +108,11 @@
           starElem.className = 'star';
           starElem.src = "/assets/star.png";
           emailContainer.appendChild(starElem);
+
+          var flagElem = document.createElement('img');
+          flagElem.className = 'flag';
+          flagElem.src = "/assets/flag-icon.png";
+          emailContainer.appendChild(flagElem);
 
           var senderElement = myHelper('div', null, 'sender', newMessages.sender);
           emailContainer.appendChild(senderElement);
